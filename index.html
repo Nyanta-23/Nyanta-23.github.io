@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/styles/dist/main.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        content: ["./src/**/*.{html,js}"],
+        theme: {
+          extend: {},
+          screens: {
+            sm: "640px",
+            // => @media (min-width: 640px) { ... }
+
+            md: "768px",
+            // => @media (min-width: 768px) { ... }
+
+            lg: "1024px",
+            // => @media (min-width: 1024px) { ... }
+
+            xl: "1280px",
+            // => @media (min-width: 1280px) { ... }
+
+            "2xl": "1536px",
+            // => @media (min-width: 1536px) { ... }
+          },
+        },
+        plugins: [],
+      };
+    </script>
+
+    <title>Nyanta</title>
+  </head>
+  <body class="overflow-x-hidden p-0 m-0 box-border font-sans">
+    <header
+      id="navbar"
+      class="flex h-20 pt-7 w-full justify-between px-6 fixed z-50 transition-all ease-in-out duration-700 sm:px-8 md:px-10 lg:px-24 lg:pb-14 lg:pt-7"
+    >
+      <a href="#home">
+        <h1 class="text-slate-200 font-bold tracking-wide uppercase text-2xl">
+          nyanta
+        </h1>
+      </a>
+
+      <button
+        class="toggle w-10 h-10 overflow-hidden text-center relative btn-toggle transition-all lg:hidden"
+      >
+        <span
+          class="ease-in-out duration-500 inline-block w-9 h-1 m-toggle-bar bg-slate-100"
+        ></span>
+        <span
+          class="ease-in-out duration-500 inline-block w-9 h-1 m-toggle-bar bg-slate-100"
+        ></span>
+        <span
+          class="ease-in-out duration-500 inline-block w-9 h-1 m-toggle-bar bg-slate-100"
+        ></span>
+      </button>
+
+      <section
+        id="mobile"
+        class="transition-all ease-in-out duration-300 fixed backdrop-blur-lg opacity-90 text-center top-20 h-full left-full lg:hidden"
+      >
+        <ul class="pt-3 text-lg text-slate-200">
+          <li class="w-screen">
+            <a href="#home" class="inline-block py-8 w-full hover:bg-black"
+              >Home</a
+            >
+          </li>
+          <li class="w-100 h-100">
+            <a href="#about" class="inline-block py-8 w-full hover:bg-black"
+              >About</a
+            >
+          </li>
+          <li class="w-100 h-100">
+            <a href="#service" class="inline-block py-8 w-full hover:bg-black"
+              >Services</a
+            >
+          </li>
+          <li class="w-100 h-100">
+            <a
+              href="#testimonial"
+              class="inline-block py-8 w-full hover:bg-black"
+              >Testimonial</a
+            >
+          </li>
+          <li class="w-100 h-100">
+            <a href="#contact" class="inline-block py-8 w-full hover:bg-black"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section
+        id="desktop"
+        class="hidden lg:inline-block text-white text-lg font-medium"
+      >
+        <ul class="flex justify-end">
+          <li class="mx-4">
+            <a href="#home" class="transition-colors ease-in-out duration-150"
+              >Home</a
+            >
+          </li>
+          <li class="mx-4">
+            <a href="#about" class="transition-colors ease-in-out duration-150"
+              >About</a
+            >
+          </li>
+          <li class="mx-4">
+            <a
+              href="#service"
+              class="transition-colors ease-in-out duration-150"
+              >Services</a
+            >
+          </li>
+          <li class="mx-4">
+            <a
+              href="#testimonial"
+              class="transition-colors ease-in-out duration-150"
+              >Testimonial</a
+            >
+          </li>
+          <li class="mx-4">
+            <a
+              href="#contact"
+              class="transition-colors ease-in-out duration-150"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </section>
+    </header>
+
+    <!-- Jumbotron Start -->
+    <section
+      id="home"
+      class="bg-blue-700 py-20 pb-80 transition-all ease-in-out duration-100 sm:px-2 md:px-4 lg:px-16"
+    >
+      <div class="px-7 text-white pt-40">
+        <h2
+          class="text-base font-medium duration-700 sm:text-lg md:text-xl lg:text-2xl"
+        >
+          Greetings, My name is
+        </h2>
+        <h1
+          class="text-4xl font-bold duration-700 my-1 sm:text-5xl md:text-6xl lg:text-7xl"
+        >
+          Muhamad Ilhan.
+        </h1>
+        <h3
+          class="text-lg font-semibold flex sm:text-xl md:text-2xl lg:text-3xl"
+        >
+          <p id="skills-typed-text"></p>
+        </h3>
+        <a
+          href="#about"
+          class="inline-block duration-700 bg-slate-950 py-3 px-5 mt-5 rounded-md text-xl sm:py-3 sm:px-4 lg:py-4 lg:px-8 hover:bg-indigo-600"
+          >About Me</a
+        >
+      </div>
+    </section>
+    <!-- Jumbotron End -->
+
+    <main>
+      <!-- About Start -->
+      <section
+        id="about"
+        class="bg-slate-950 py-20 px-8 text-blue-50 font-medium pt-28"
+      >
+        <h2 class="text-center text-3xl font-semibold">About Me</h2>
+        <div
+          class="wrap-about py-10 transition-all ease-in-out duration-300 sm:px-4 md:px-5 lg:grid lg:grid-cols-2"
+        >
+          <div class="acquaintance py-8 lg:py-4 lg:pl-16">
+            <h3 class="text-xl pb-4 lg:text-2xl xl:text-3xl">Acquaintance</h3>
+            <p class="text-base font-normal">
+              My name is Muhamad Ilhan Revaliana Firmansyah. For now, my hobby
+              is watching anime. I entered the world of information technology
+              and started to explore it when I graduated from high school. At
+              the time, I chose to be a Front-End Web Developer because I saw
+              that being a back-End Developer was too hard and difficult for me.
+              But time after time and day after day, I wanted to be a Back-End
+              Developer and a Full-Stack web developer when I entered the world
+              of information technology and started studying information
+              technology.
+            </p>
+          </div>
+          <div class="sallary py-8 order-3 lg:pl-16">
+            <h3 class="text-xl pb-4 lg:text-2xl xl:text-3xl">
+              My first salary in information technology
+            </h3>
+            <p class="text-base font-normal">
+              When I was studying information technology, I entered UKM
+              Tahungoding. At that time, I went through the day as usual while
+              learning to code front-end, back-end, and other college
+              assignments. When I started the even-to-odd semester holidays, the
+              head of my university offered me a job at the NOIU Event Organizer
+              company. I tried to be brave and took the front-end web developer
+              job in the hope that I could develop and find out how to work
+              together with the back-end team. Day after day, I was able to
+              finish it well, even though there were many errors, and when it
+              was done, I got my first salary.
+            </p>
+          </div>
+          <img
+            class="py-5 md:w-9/12 md:h-96 lg:row-span-2 lg:w-full lg:h-80 lg:px-10 xl:px-12 xl:h-96"
+            src="./assets/img/beach.jpg"
+            alt="beach-jpg"
+          />
+        </div>
+      </section>
+      <!-- About End -->
+
+      <!-- Service Start -->
+      <section id="service" class="bg-blue-700 text-white py-20 px-8 pt-28">
+        <h3 class="text-center text-3xl font-semibold">My Service</h3>
+
+        <div
+          class="wrap-service-card grid md:grid-cols-2 xl:grid-cols-4 items-center justify-items-center lg:gap-x-0 xl:gap-x-10 transition-all"
+        >
+          <div
+            class="wrapper-service text-center pt-10 transition-all duration-500 ease-in-out"
+          >
+            <div
+              class="card w-80 bg-white/10 backdrop-blur bg-base-100 shadow-xl text-center rounded pb-5 pt-5 my-3 hover:bg-slate-950 transition-all duration-500 ease-in-out"
+            >
+              <figure>
+                <i class="bx bx-palette text-7xl"></i>
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title text-lg pt-3 pb-5 font-medium">
+                  Design Web Prototype
+                </h2>
+                <div class="description px-5">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Accusamus, autem repellat! Praesentium tempore beatae
+                    facilis provident odit aliquam vero pariatur sunt. Illum
+                    aperiam voluptate dolor nesciunt, sapiente explicabo
+                    distinctio aliquam.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="wrapper-service text-center pt-10 transition-all duration-500 ease-in-out"
+          >
+            <div
+              class="card w-80 bg-white/10 backdrop-blur bg-base-100 shadow-xl text-center rounded pb-5 pt-5 my-3 hover:bg-slate-950 transition-all duration-500 ease-in-out"
+            >
+              <figure><i class="bx bx-paint text-7xl"></i></figure>
+              <div class="card-body">
+                <h2 class="card-title text-lg pt-3 pb-5 font-medium">
+                  Web Design
+                </h2>
+                <div class="description px-5">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Accusamus, autem repellat! Praesentium tempore beatae
+                    facilis provident odit aliquam vero pariatur sunt. Illum
+                    aperiam voluptate dolor nesciunt, sapiente explicabo
+                    distinctio aliquam.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="wrapper-service text-center pt-10 transition-all duration-500 ease-in-out"
+          >
+            <div
+              class="card w-80 bg-white/10 backdrop-blur bg-base-100 shadow-xl text-center rounded pb-5 pt-5 my-3 hover:bg-slate-950 transition-all duration-500 ease-in-out"
+            >
+              <figure>
+                <i class="bx bx-code-block text-7xl"> </i>
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title text-lg pt-3 pb-5 font-medium">
+                  Developing Web
+                </h2>
+                <div class="description px-5">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Accusamus, autem repellat! Praesentium tempore beatae
+                    facilis provident odit aliquam vero pariatur sunt. Illum
+                    aperiam voluptate dolor nesciunt, sapiente explicabo
+                    distinctio aliquam.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="wrapper-service text-center pt-10 transition-all duration-500 ease-in-out"
+          >
+            <div
+              class="card w-80 bg-white/10 backdrop-blur bg-base-100 shadow-xl text-center rounded pb-5 pt-5 my-3 hover:bg-slate-950 transition-all duration-500 ease-in-out"
+            >
+              <figure>
+                <i class="bx bx-package text-7xl"></i>
+              </figure>
+              <div class="card-body">
+                <h2 class="card-title text-lg pt-3 pb-5 font-medium">
+                  All Service
+                </h2>
+                <div class="description px-5">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Accusamus, autem repellat! Praesentium tempore beatae
+                    facilis provident odit aliquam vero pariatur sunt. Illum
+                    aperiam voluptate dolor nesciunt, sapiente explicabo
+                    distinctio aliquam.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Service End -->
+
+      <!-- Testimoni Start -->
+      <section
+        id="testimonial"
+        class="bg-slate-950 text-white py-20 px-8 pt-28"
+      >
+        <h2 class="text-center text-3xl font-semibold">Testimonial</h2>
+        <div class="swiper mySwiper">
+          <div class="testimoni-wrap py-8 swiper-wrapper">
+            <div
+              class="relative flex w-full flex-col bg-clip-border text-white shadow-sm bg-blue-700 p-5 swipe-testimoni swiper-slide"
+            >
+              <div class="my-6 p-0">
+                <i
+                  class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+                >
+                  "I found solution to all my design needs from Creative Tim. I
+                  use them as a freelancer in my hobby projects for fun! And its
+                  really affordable, very humble guys !!!"
+                </i>
+              </div>
+              <div
+                class="relative mx-0 mt-1 flex items-center gap-4 overflow-hidden bg-transparent bg-clip-border pt-0 pb-4 shadow-none"
+              >
+                <div class="flex w-full flex-col gap-0.5">
+                  <div class="flex items-center justify-between">
+                    <h5
+                      class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
+                    >
+                      Tania Andrew
+                    </h5>
+                  </div>
+                  <p
+                    class="block font-sans text-base font-light leading-relaxed text-blue-gray-900 antialiased"
+                  >
+                    Frontend Lead @ Google
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative flex w-full flex-col bg-clip-border text-white shadow-sm bg-blue-700 p-5 swipe-testimoni swiper-slide"
+            >
+              <div class="my-6 p-0">
+                <i
+                  class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+                >
+                  "I found solution to all my design needs from Creative Tim. I
+                  use them as a freelancer in my hobby projects for fun! And its
+                  really affordable, very humble guys !!!"
+                </i>
+              </div>
+              <div
+                class="relative mx-0 mt-1 flex items-center gap-4 overflow-hidden bg-transparent bg-clip-border pt-0 pb-4 shadow-none"
+              >
+                <div class="flex w-full flex-col gap-0.5">
+                  <div class="flex items-center justify-between">
+                    <h5
+                      class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
+                    >
+                      Mark
+                    </h5>
+                  </div>
+                  <p
+                    class="block font-sans text-base font-light leading-relaxed text-blue-gray-900 antialiased"
+                  >
+                    Frontend Lead @ Google
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative flex w-full flex-col bg-clip-border text-white shadow-sm bg-blue-700 p-5 swipe-testimoni swiper-slide"
+            >
+              <div class="my-6 p-0">
+                <i
+                  class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+                >
+                  "I found solution to all my design needs from Creative Tim. I
+                  use them as a freelancer in my hobby projects for fun! And its
+                  really affordable, very humble guys !!!"
+                </i>
+              </div>
+              <div
+                class="relative mx-0 mt-1 flex items-center gap-4 overflow-hidden bg-transparent bg-clip-border pt-0 pb-4 shadow-none"
+              >
+                <div class="flex w-full flex-col gap-0.5">
+                  <div class="flex items-center justify-between">
+                    <h5
+                      class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
+                    >
+                      Chen
+                    </h5>
+                  </div>
+                  <p
+                    class="block font-sans text-base font-light leading-relaxed text-blue-gray-900 antialiased"
+                  >
+                    Frontend Lead @ Google
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative flex w-full flex-col bg-clip-border text-white shadow-sm bg-blue-700 p-5 swipe-testimoni swiper-slide"
+            >
+              <div class="my-6 p-0">
+                <i
+                  class="block font-sans text-base font-light leading-relaxed text-inherit antialiased"
+                >
+                  "I found solution to all my design needs from Creative Tim. I
+                  use them as a freelancer in my hobby projects for fun! And its
+                  really affordable, very humble guys !!!"
+                </i>
+              </div>
+              <div
+                class="relative mx-0 mt-1 flex items-center gap-4 overflow-hidden bg-transparent bg-clip-border pt-0 pb-4 shadow-none"
+              >
+                <div class="flex w-full flex-col gap-0.5">
+                  <div class="flex items-center justify-between">
+                    <h5
+                      class="block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
+                    >
+                      Shen
+                    </h5>
+                  </div>
+                  <p
+                    class="block font-sans text-base font-light leading-relaxed text-blue-gray-900 antialiased"
+                  >
+                    Frontend Lead @ Google
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimoni End -->
+
+      <!-- Contact Start -->
+      <section id="contact" class="bg-blue-700 text-white py-20 px-8 pt-28">
+        <h2 class="text-center text-3xl font-semibold">Contact Me</h2>
+        <div class="contact-wrap py-8 grid lg:grid-cols-2">
+          <div class="contact-info sm:px-5 lg:pt-1 lg:ml-10 xl:ml-12">
+            <h4 class="text-2xl font-medium">Contact Info</h4>
+            <div class="box-address font-bold flex py-5">
+              <div class="icon">
+                <i class="bx bx-current-location text-3xl px-3"></i>
+              </div>
+              <div class="text text-lg ml-2">
+                <h5 class="text-xl">Address</h5>
+                <div class="flex flex-wrap w-72 font-medium">
+                  <p>Sumedang Cimanggung,</p>
+                  <p>Parakan Muncang,</p>
+                  <p>Cihanjuang</p>
+                </div>
+              </div>
+            </div>
+            <div class="box-social-media">
+              <div
+                class="box-instagram flex font-bold py-5 transition-all duration-500 ease-in-out"
+              >
+                <div class="icon">
+                  <i class="bx bxl-instagram text-3xl px-3"></i>
+                </div>
+                <div class="text text-lg ml-2">
+                  <h5 class="text-xl">Instagram</h5>
+                  <p class="font-medium">
+                    <a
+                      href="https://www.instagram.com/ihaannn_/"
+                      target="_blank"
+                      >@ihaannn_</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div
+                class="box-github flex font-bold py-5 transition-all duration-500 ease-in-out"
+              >
+                <div class="icon">
+                  <i class="bx bxl-github text-3xl px-3"></i>
+                </div>
+                <div class="text text-lg ml-2">
+                  <h5 class="text-xl">Github</h5>
+                  <p>
+                    <a href="https://github.com/Nyanta-23" target="_blank"
+                      >Nyanta-23</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="contact-message pt-5 sm:px-5 lg:px-0 lg:pt-0 lg:mr-10 xl:mr-12"
+          >
+            <h4 class="text-2xl font-medium">Message</h4>
+            <form
+              action="mailto:hanwork02404@gmail.com"
+              class="flex flex-wrap py-5 md:py-0"
+            >
+              <input
+                class="bg-white/30 backdrop-blur-sm appearance-none border-1 border-blue-700 w-full h-14 py-2 px-4 text-white leading-tight focus:outline-none placeholder-white lg:mt-5"
+                type="text"
+                placeholder="Name"
+              />
+              <input
+                class="bg-white/30 backdrop-blur-sm appearance-none border-1 border-blue-700 mt-5 w-full h-14 py-2 px-4 text-white leading-tight focus:outline-none placeholder-white"
+                type="email"
+                placeholder="Email"
+              />
+              <textarea
+                class="bg-white/30 backdrop-blur-sm appearance-none border-1 border-blue-700 pt-4 mt-5 w-full py-2 px-4 text-white leading-tight focus:outline-none placeholder-white"
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Message"
+              ></textarea>
+              <button
+                type="submit"
+                class="transition-all duration-500 ease-in-out text-lg rounded px-4 font-bold text-white bg-slate-950 text-center hover:bg-indigo-500 focus:bg-indigo-700 mt-3 py-3 px-5"
+              >
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- Contact End -->
+    </main>
+
+    <footer class="w-full text-center bg-black text-white p-5">
+      Copyright 2023
+      <a
+        href="https://github.com/Nyanta-23"
+        target="_blank"
+        class="transition-all ease-in-out duration-300 hover:text-blue-700"
+        >Nyanta-23</a
+      >. All Right Reserved.
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./assets/script/script.js"></script>
+  </body>
+</html>

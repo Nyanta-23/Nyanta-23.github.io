@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --item-navbar-btn: 229px;
+}
+
+
+
+.m-toggle-bar{
+  position: absolute;
+  border-radius: 1px;
+}
+
+.m-toggle-bar:nth-child(1){
+  margin-top: -12px;
+  right: 1px;
+}
+
+.m-toggle-bar:nth-child(2){
+  margin-top: -2px;
+  right: 1px;
+}
+
+.m-toggle-bar:nth-child(3){
+  margin-top: 8px;
+  right: 1px;
+}
+
+.btn-toggle{
+  margin-top: -7px;
+}
+
+.btnTransition:nth-child(1){
+  transform: rotate(-44deg) translate(-4px, 11px);
+  width: 45px;
+}
+
+.btnTransition:nth-child(2){
+  transform: rotate(44deg) translate(4px, -3px);
+  width: 45px;
+}
+
+.btnTransition:nth-child(3){
+  transform: translate(0, 100px);
+
+}
+
+.md-width{
+  width: 100px !important;
+}
